@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p The inventory tracker has the following record counts:
+
+  ul
+    li #[strong Products:] !{products_count}
+    li #[strong Brands:] !{brands_count}
+    li #[strong Categories:] !{categories_count}
