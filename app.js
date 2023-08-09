@@ -11,15 +11,15 @@ var usersRouter = require('./routes/users');
 const collection = require('./routes/collection')
 
 var app = express();
-/*
+
 mongoose.set("strictQuery", false);
-const mongoDB = "mongodb://127.0.0.1/my_database";
+const mongoDB = process.env.MONGODB_URI || "mongodb+srv://admin:NcKH80qinHRmNFLS@cluster0.d6afguz.mongodb.net/inventory_application?retryWrites=true&w=majority";
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
 
-*/
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/collection', collection)
+app.use('/collection', collection)
 
 
 // catch 404 and forward to error handler

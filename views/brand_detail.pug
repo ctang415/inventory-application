@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  h1 Item: #{brand.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Product
+
+    dl
+      each product in brand_products
+        dt
+          a(href=product.url) #{product.name}
+        dd #{product.description}
+        dd Stock: #{product.stock}
+
+      else
+        p This category has no products
