@@ -9,7 +9,7 @@ router.get('/item/create', item_controller.item_create_get)
 
 router.post('/item/create', item_controller.item_create_post)
 
-router.get('/item/delete', item_controller.item_delete_get)
+router.get('/item/:id/delete', item_controller.item_delete_get)
 
 router.post('/item/:id/delete', item_controller.item_delete_post)
 

@@ -2,11 +2,11 @@ extends layout
 
 block content
 
-  h1 Item: #{brand.name}
+  h1 Brand: #{brand.name}
 
   div(style='margin-left:20px;margin-top:20px')
 
-    h4 Product
+    h4 Items
 
     dl
       each product in brand_products
@@ -17,3 +17,11 @@ block content
 
       else
         p This category has no products
+
+    hr
+    p
+    a(href=brand.url+'/delete') Delete brand
+
+    hr
+    p
+    a(href=brand.url+'/update') Update brand

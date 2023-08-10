@@ -20,9 +20,11 @@ block content
       textarea#ingredients.form-control(type='textarea', placeholder='Ingredients' name='ingredients' required='true') #{undefined===item ? '' : item.ingredients}
     div.form-group
       label(for='category') Category:
-      select#category.form-control(type='select', placeholder='Select category' name='category' required='true' )
+        div
         for category in categories
-            option(value=category._id) #{category.name}
+          div(style='display: inline; padding-right:10px;') 
+            input.checkbox-input(type='checkbox', name='category', id=category._id, value=category._id, checked=category.checked )
+            label(for=category._id) #{category.name}
     div.form-group
       label(for='price') Price:
       input#price.form-control(type='number', placeholder='Price of item' name='price' required='true' value=(undefined===item ? '' : item.price) )
