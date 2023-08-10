@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Item: #{item.name}
+
+  p #[strong Brand: ]
+    a(href=item.brand.url) #{item.brand.name}
+  p #[strong Description:] #{item.description}
+  p #[strong Ingredients:] #{item.ingredients}
+  p #[strong Price:] $#{item.price}
+  p #[strong Stock:] #{item.stock}
+  p #[strong Category: ]
+    each val, index in item.category
+      a(href=val.url) #{val.name}
+      if index < item.category.length - 1
+        |, 

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#title.form-control(type='text', placeholder='Name of item' name='name' required='true' value=(undefined===item ? '' : item.name) )
+    div.form-group
+      label(for='brand') Brand:
+      select#brand.form-control(type='select', placeholder='Select brand' name='brand' required='true' )
+        for brand in brands
+            option(value=brand._id) #{brand.name}
+    div.form-group
+      label(for='description') Description:
+      textarea#description.form-control(type='textarea', placeholder='Description' name='description' required='true') #{undefined===item ? '' : item.description}
+    div.form-group
+      label(for='ingredients') Ingredients:
+      textarea#ingredients.form-control(type='textarea', placeholder='Ingredients' name='ingredients' required='true') #{undefined===item ? '' : item.ingredients}
+    div.form-group
+      label(for='category') Category:
+      select#category.form-control(type='select', placeholder='Select category' name='category' required='true' )
+        for category in categories
+            option(value=category._id) #{category.name}
+    div.form-group
+      label(for='price') Price:
+      input#price.form-control(type='number', placeholder='Price of item' name='price' required='true' value=(undefined===item ? '' : item.price) )
+    div.form-group
+      label(for='stock') Stock:
+      input#stock.form-control(type='number', placeholder='Stock of item' name='stock' required='true' value=(undefined===item ? '' : item.stock) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
