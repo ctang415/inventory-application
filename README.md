@@ -1,1 +1,5 @@
 # inventory-application
+
+This project was basically a sequel to the express library tutorial project because I used a lot of the same code and techniques to create it. While I pretty much reused the view templates for simplicity's sake and followed the tutorial design for the entire project, I feel like I got a better understanding of how to create mongoose models and the relationship between the router and controllers the second time around. It was daunting at first to be told to make my own inventory application, but once I started working on it, I realized that it wasn't so bad. I actually feel like the view templates were the most tedious part because PUG is not very forgiving when it comes to HTML tag placement which is why I opted to just reuse the previous templates.
+
+I'm slowly getting the hang of express middleware and mongoose's schema models, but I still have a lot to learn on my back-end journey.

@@ -22,9 +22,7 @@
     console.log("Debug: About to connect");
     await mongoose.connect(mongoDB);
     console.log("Debug: Should be connected?");
-    await createBrands();
-    await createCategories();
-    await createItems();
+    await Promise.all([ createBrands(), createCategories(), createItems()])
     console.log("Debug: Closing mongoose");
     mongoose.connection.close();
   }
